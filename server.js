@@ -1,6 +1,5 @@
 // Dependencies
 const express = require('express');
-const exphbs = require("express-handlebars");
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -39,7 +38,7 @@ const db = mongoose.connection;
 
 // Show any Mongoose errors
 db.on('error', function(err) {
-  console.log('Mongoose Error: ', err);
+  console.log('MySQL Error: ', err);
 });
 
 // Once logged in to the db through mongoose, log a success message
