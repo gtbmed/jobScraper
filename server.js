@@ -20,9 +20,6 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
-// Express-Handlebars
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
 
 // Make public a static dir
 app.use(express.static("public"));
@@ -47,7 +44,7 @@ db.on('error', function(err) {
 
 // Once logged in to the db through mongoose, log a success message
 db.once('open', function() {
-  console.log('Mongoose connection successful.');
+  console.log('MySQL connection successful.');
 });
 
 // Import Routes/Controller
