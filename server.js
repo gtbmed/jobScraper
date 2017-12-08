@@ -1,7 +1,6 @@
 // Dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 
 // Require our Articles and Comments Models
 const Articles = require("./models/Articles.js");
