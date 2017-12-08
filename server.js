@@ -13,10 +13,11 @@ var request = require('request');
 //Initialize Express
 const app = express();
 
-// Initiate body-parser for the app
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+// Sets up the Express app to handle data parsing
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
 // Make public a static dir
