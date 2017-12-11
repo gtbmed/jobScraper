@@ -1,0 +1,24 @@
+{
+  "name": "jobscraper",
+  "version": "1.0.0",
+  "description": "A scraper that will collect job postings from job sites",
+  "main": "server.js",
+  "dependencies": {
+    "sequelize": "^4.27.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gtbmed/jobScraper.git"
+  },
+  "author": "john barson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gtbmed/jobScraper/issues"
+  },
+  "homepage": "https://github.com/gtbmed/jobScraper#readme"
+}
