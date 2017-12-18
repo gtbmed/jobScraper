@@ -2,9 +2,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-// Require our Articles and Comments Models
-const Articles = require("./models/Articles.js");
-const Comments = require("./models/Comments.js");
+// Require our Sequelize model
+const db = require("./models");
 
 // Scraping Tools
 var cheerio = require('cheerio');
