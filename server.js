@@ -13,6 +13,9 @@ var request = require('request');
 //Initialize Express
 const app = express();
 
+//Set the port for online and local use
+const PORT = process.env.PORT || 3000;
+
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,38 +26,10 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Make public a static dir
 app.use(express.static("public"));
 
-// if else statement to use localhost if not being hoseted on Herko
-//  Seemed helpful for development without having to switch code repeatedly
-// credit to davesrose for the if/else setup
-
-// Below code was used for Mongoose.  This may not be correct for sequelize.
-// if(process.env.NODE_ENV == 'production'){
-//
-//   // hosted MySQl
-// }
-// else{
-//   // local MySQL
-// }
-//
-// const db = mongoose.connection;
-//
-// // Show any Mongoose errors
-// db.on('error', function(err) {
-//   console.log('MySQL Error: ', err);
-// });
-//
-// // Once logged in to the db through mongoose, log a success message
-// db.once('open', function() {
-//   console.log('MySQL connection successful.');
-// });
-//
-// // Import Routes/Controller
-// const router = require('./controllers/controller.js');
-// app.use('/', router);
-
-
-// Launch App
-const port = process.env.PORT || 3000;
-app.listen(port, function(){
-  console.log('Running on port: ' + port);
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
