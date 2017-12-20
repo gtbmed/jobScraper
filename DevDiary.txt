@@ -1,0 +1,31 @@
+12/19/2017
+
+So I thought I'd start a diary with what I'm doing or thinking on this project.  Maybe it will help me get my thoughts organized.  Maybe if someone stumbles across this and has ideas, they can message me or make an issue?
+
+Anyway, going back to the old sequelize stuff I'd learned, I saw that my server.js should be much less complicated than it was.  I just need to clarify whether the bodyParser.urlencoded extended property should be true or false.  Review time.
+
+Controllers
+1. What is there is what I took from the newscraping assignment we had to do.  I'm going to have to go through and make sure this works with sequelize and MySQL instead of Mongoose and MongoDB.
+2. Check my MVC notes and see about the best practice for structure.
+3. Decide on routes and at least make skeleton of them.
+
+  To Do:
+  1. Convert from Mongoose to Sequelize structure
+  2. Get URL information from Indeed.com.  Keep it basic for now.  Hard code for location, level, full-time.
+  3. Change information for Cheerio scraping to match Indeed.com search results
+
+Models
+1.  It's a pretty simple model.  Changing the booleans should impact what get's displayed in what location on the page.
+Side Note: Adam at Kabbage told me about how MongoDB apparently drops 30% of it's data.  I'll have to check if I remember that correctly.  I remember 30% and losing.
+
+To Do:
+ None at this time.
+
+Public
+Front end will be last.  See README for current plan.  Adjustments will be made after I start working on it or have strokes of genius...or stupidity that works. (I'm fine with either).
+
+Routes
+Am I supposed to do routes here or in "Controllers".
+  To Do:
+    1. Review MVC and best practices
+    2. If Routes folder is correct, make them there
