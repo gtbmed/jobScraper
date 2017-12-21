@@ -29,3 +29,8 @@ Am I supposed to do routes here or in "Controllers".
   To Do:
     1. Review MVC and best practices
     2. If Routes folder is correct, make them there
+
+12/21/2017
+MVC Info
+https://developer.chrome.com/apps/app_frameworks
+^Follow this up with reading on Design Patterns for JS.  Yes there is no one right way to do things, but I'd rather optimize ahead of time.
