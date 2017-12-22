@@ -36,3 +36,8 @@ https://developer.chrome.com/apps/app_frameworks
 ^Follow this up with reading on Design Patterns for JS.  Yes there is no one right way to do things, but I'd rather optimize ahead of time.
 https://addyosmani.com/resources/essentialjsdesignpatterns/book/
 ^I feel like this is a good way to follow up the bootcamp.  I'd like to get some best practices into my head so that I can do better faster.  I'd like to have a larger toolkit to work with when problem solving.  Right now it feels like i'm reinventing the wheel all the time.  Let's try starting with a wheel and see what else I can add to it.
+
+12/22/2017
+Got rid of the routes folder.  After further reading on MVC, I see that controllers is where it belongs.  I want to keep things orderly.  Let's put them there for now and break files up if I need to.
+
+Today's goal:  Convert controllers.js from mongoose to sequelize.
