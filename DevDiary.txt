@@ -61,3 +61,5 @@ Maybe I need to use a routes folder just for the database manipulating routes?  
 
 12/25/2017
 Update link for Cheerio and classes for it to look at and scrape
+
+As part of the conversion to MySQL I'll have to pull out my notes on how I
