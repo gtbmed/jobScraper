@@ -41,3 +41,23 @@ https://addyosmani.com/resources/essentialjsdesignpatterns/book/
 Got rid of the routes folder.  After further reading on MVC, I see that controllers is where it belongs.  I want to keep things orderly.  Let's put them there for now and break files up if I need to.
 
 Today's goal:  Convert controllers.js from mongoose to sequelize.
+
+Also, here's the breakdown of a indeed.com url
+https://www.indeed.com/jobs?q=javascript&l=Atlanta,+GA&rbl=Atlanta,+GA&jlid=966e6327a98f7e81&jt=fulltime&explvl=entry_level
+
+www.indeed.com/jobs
+?q = before query term
+&l = before location
+&rbl = before the more specific location
+&jlid followed by long string (GUID?) = appears when the location is selected.  This may have to be hardcoded for locations
+&jt = before job type (fulltime, internship, contract, temporary, parttime, commission)
+&explvl = before experience level (entry_level, mid_level, senior_level)
+
+not shown
+&rbc = before company (this comes after &l but before)
+
+16:27
+Maybe I need to use a routes folder just for the database manipulating routes?  Maybe I should plan out my routes first?
+
+12/25/2017
+Update link for Cheerio and classes for it to look at and scrape
