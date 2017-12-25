@@ -2,13 +2,10 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const exphbs = require("express-handlebars");
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 
-// Require our Articles and Comments Models
-const Articles = require("./models/Articles.js");
-const Comments = require("./models/Comments.js");
+// Require our sequelize model
+const db = require('../models/');
 
 // Scraping Tools
 var cheerio = require('cheerio');
@@ -18,20 +15,20 @@ var request = require('request');
 // Scrape Route
 app.get("/scrape", function(req, res) {
   // Make a request call to grab the HTML body from the site of your choice
-  request("https://www.theatlantic.com/latest/", function(error, response, html) {
+  request("https://www.indeed.com/jobs?q=javascript&l=Atlanta,+GA&rbl=Atlanta,+GA&jlid=966e6327a98f7e81&jt=fulltime&explvl=entry_level", function(error, response, html) {
 
     var $ = cheerio.load(html);
 
     var result = {};
     // Look for the specified clas
-    $("li.article").each(function(i, element) {
+    $(".row result clickcard").each(function(i, element) {
+      //Grab the Job Title
+      result.title = $(element).children(".jobtitle").text();
       // grab the link
-      result.link = $(element).children().attr("href");
-      // Grabbing the title requires going for the child of the child with class .hed
-      result.title = $(element).children().children(".hed").text();
-
-      //Use the Articles Model to add each new article
-      var newArt = new Articles(result);
+      result.link = $(element).children().children().attr("href");
+      // If I get these working, we'll see about company and description
+      //Use the JobPosting Model to add each new posting
+      var jobPosting = new JobPosting(result);
 
       //Add the new Article to the DB.  This will give it a unique ID.  Using array would have only given the array the ID, not the entry
       newArt.save(function(error, doc){
