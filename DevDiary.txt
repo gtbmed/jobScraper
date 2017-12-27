@@ -62,4 +62,10 @@ Maybe I need to use a routes folder just for the database manipulating routes?  
 12/25/2017
 Update link for Cheerio and classes for it to look at and scrape
 
-As part of the conversion to MySQL I'll have to pull out my notes on how I
+As part of the conversion to MySQL I'll have to pull out my notes.
+
+12/26/2017
+Ok, I got MySQL and my app connecting I think.  I tried testing my routes and realized I had not connected them to the server.
+
+In the boot camp I don't think we used a controller until we used Mongoose and MongoDB.  Time to check those notes.
+Nevermind, we did.  We also used Handlebars...not my favorite.  I'll incorporate what I started doing for the sequlizedBurger hw.
