@@ -25,6 +25,10 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Make public a static dir
 app.use(express.static("public"));
 
+// Conect to our controllers to get the scrape route going for testing
+const router = require("./controllers/controllers.js");
+app.use(router);
+
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: true }).then(function() { // force: true if you want the table dropped, false if not
