@@ -13,7 +13,7 @@ var request = require('request');
 
 
 // Scrape Route
-app.get("/scrape", function(req, res) {
+router.get("/scrape", function(req, res) {
   // Make a request call to grab the HTML body from the site of your choice
   request("https://www.indeed.com/jobs?q=javascript&l=Atlanta,+GA&rbl=Atlanta,+GA&jlid=966e6327a98f7e81&jt=fulltime&explvl=entry_level", function(error, response, html) {
 
@@ -30,10 +30,10 @@ app.get("/scrape", function(req, res) {
       //Test to see if it scrapes
       console.log (result); //
 
-    // Go back to the home page...or should we redirect to /articles after the scrape
-    res.redirect('/')
-  });
+    // Go back to the home page
+    res.redirect('/');
+    });
+  })
 });
-
 // Export Router to server.js
 module.exports = router;
