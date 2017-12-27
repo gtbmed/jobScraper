@@ -69,3 +69,5 @@ Ok, I got MySQL and my app connecting I think.  I tried testing my routes and re
 
 In the boot camp I don't think we used a controller until we used Mongoose and MongoDB.  Time to check those notes.
 Nevermind, we did.  We also used Handlebars...not my favorite.  I'll incorporate what I started doing for the sequlizedBurger hw.
+
+Ok, I've connected controllers.js and server.js.  Now I'm testing to see if my scrape is pulling the information I want it to.  So far it seems to not be doing anything.  I haven't received any errors.  I'm checking Cheerio to see if I'm putting in my "element" corrrectly.  LinkedIn has a class called "row result clickcard".  I wonder if the spaces are causing trouble.
