@@ -27,7 +27,7 @@ app.use(express.static("public"));
 
 // Conect to our controllers to get the scrape route going for testing
 const router = require("./controllers/controllers.js");
-app.use(router);
+app.use('/', router);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
