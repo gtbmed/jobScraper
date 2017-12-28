@@ -21,17 +21,17 @@ router.get("/scrape", function(req, res) {
 
     var result = {};
     // Look for the specified clas
-    $(".row result clickcard").each(function(i, element) {
+    $('.jobtitle').each(function(i, element) {
       //Grab the Job Title
-      result.title = $(element).children(".jobtitle").text();
+      result.title = $(element).text();
       // grab the link
-      result.link = $(element).children().children().attr("href");
+      //result.link = $(element).children().children().attr("href");
       // If I get these working, we'll see about company and description
       //Test to see if it scrapes
       console.log (result); //
 
     // Go back to the home page
-    res.redirect('/');
+    //res.redirect('/');
     });
   })
 });
