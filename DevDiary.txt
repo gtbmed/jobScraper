@@ -71,3 +71,21 @@ In the boot camp I don't think we used a controller until we used Mongoose and M
 Nevermind, we did.  We also used Handlebars...not my favorite.  I'll incorporate what I started doing for the sequlizedBurger hw.
 
 Ok, I've connected controllers.js and server.js.  Now I'm testing to see if my scrape is pulling the information I want it to.  So far it seems to not be doing anything.  I haven't received any errors.  I'm checking Cheerio to see if I'm putting in my "element" corrrectly.  LinkedIn has a class called "row result clickcard".  I wonder if the spaces are causing trouble.
+
+12/27/2017
+Ok, I'm not sure why nothing is happening.  I figured nothing would show up on the browser because I haven't told anything to show up.  I thought my console.log would at least show the scraped results, but the browser (http://localhost:3000/scrape) isn't showing anything.   I may have to go back and build things from scratch to see if I can find where the errors are.  I may be trying to piece together to many parts too soon.
+
+Before I do all that, I'm going to make go over CheerioJS again.  Maybe I'm really messing up what I'm looking for?  The only thing I seem to get is "empty response" in the browser.  Time to take a break and let it stew in my brain.
+
+20:58
+GREAT SUCCESS.  I saw that the class "jobtitle" was pretty unique and had the desired info in the div.  I changed my cheerio scrape to
+
+$('.jobtitle').each(function(i, element) {
+  //Grab the Job Title
+  result.title = $(element).text();
+
+  The titles on the first page have been grabbed.  I will try to add each in the order of importance "link", "company", "description", "salary".
+
+  Maybe I will change the DevDiary to a .md file so my notes are better displayed.
+
+  Also helpful:  https://scotch.io/tutorials/scraping-the-web-with-node-js
