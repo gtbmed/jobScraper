@@ -10,7 +10,7 @@ const db = require('../models/');
 // Scraping Tools
 var cheerio = require('cheerio');
 var request = require('request');
-
+const urlPrefix = 'https://www.indeed.com'
 
 // Scrape Route
 router.get("/scrape", function(req, res) {
@@ -25,7 +25,7 @@ router.get("/scrape", function(req, res) {
       //Grab the Job Title
       result.title = $(element).text();
       // grab the link
-      result.link = $(element).children().attr("href");
+      result.link = 'https://www.indeed.com' + $(element).children().attr("href");
       // If I get these working, we'll see about company and description
       //Test to see if it scrapes
       console.log (result); //
