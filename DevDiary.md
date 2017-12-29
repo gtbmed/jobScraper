@@ -1,4 +1,4 @@
-##H2 12/19/2017
+## 12/19/2017
 
 So I thought I'd start a diary with what I'm doing or thinking on this project.  Maybe it will help me get my thoughts organized.  Maybe if someone stumbles across this and has ideas, they can message me or make an issue?
 
@@ -30,14 +30,14 @@ Am I supposed to do routes here or in "Controllers".
     1. Review MVC and best practices
     2. If Routes folder is correct, make them there
 
-##H2 12/21/2017
+## 12/21/2017
 MVC Info
 https://developer.chrome.com/apps/app_frameworks
 ^Follow this up with reading on Design Patterns for JS.  Yes there is no one right way to do things, but I'd rather optimize ahead of time.
 https://addyosmani.com/resources/essentialjsdesignpatterns/book/
 ^I feel like this is a good way to follow up the bootcamp.  I'd like to get some best practices into my head so that I can do better faster.  I'd like to have a larger toolkit to work with when problem solving.  Right now it feels like i'm reinventing the wheel all the time.  Let's try starting with a wheel and see what else I can add to it.
 
-##H2 12/22/2017
+## 12/22/2017
 Got rid of the routes folder.  After further reading on MVC, I see that controllers is where it belongs.  I want to keep things orderly.  Let's put them there for now and break files up if I need to.
 
 Today's goal:  Convert controllers.js from mongoose to sequelize.
@@ -56,15 +56,15 @@ www.indeed.com/jobs
 not shown
 &rbc = before company (this comes after &l but before)
 
-16:27
+### 16:27
 Maybe I need to use a routes folder just for the database manipulating routes?  Maybe I should plan out my routes first?
 
-##H2 12/25/2017
+## 12/25/2017
 Update link for Cheerio and classes for it to look at and scrape
 
 As part of the conversion to MySQL I'll have to pull out my notes.
 
-##H2 12/26/2017
+## 12/26/2017
 Ok, I got MySQL and my app connecting I think.  I tried testing my routes and realized I had not connected them to the server.
 
 In the boot camp I don't think we used a controller until we used Mongoose and MongoDB.  Time to check those notes.
@@ -72,12 +72,12 @@ Nevermind, we did.  We also used Handlebars...not my favorite.  I'll incorporate
 
 Ok, I've connected controllers.js and server.js.  Now I'm testing to see if my scrape is pulling the information I want it to.  So far it seems to not be doing anything.  I haven't received any errors.  I'm checking Cheerio to see if I'm putting in my "element" corrrectly.  LinkedIn has a class called "row result clickcard".  I wonder if the spaces are causing trouble.
 
-##H2 12/27/2017
+## 12/27/2017
 Ok, I'm not sure why nothing is happening.  I figured nothing would show up on the browser because I haven't told anything to show up.  I thought my console.log would at least show the scraped results, but the browser (http://localhost:3000/scrape) isn't showing anything.   I may have to go back and build things from scratch to see if I can find where the errors are.  I may be trying to piece together to many parts too soon.
 
 Before I do all that, I'm going to make go over CheerioJS again.  Maybe I'm really messing up what I'm looking for?  The only thing I seem to get is "empty response" in the browser.  Time to take a break and let it stew in my brain.
 
-20:58
+### 20:58
 GREAT SUCCESS.  I saw that the class "jobtitle" was pretty unique and had the desired info in the div.  I changed my cheerio scrape to
 
     $('.jobtitle').each(function(i, element) {
@@ -90,5 +90,7 @@ Maybe I will change the DevDiary to a .md file so my notes are better displayed.
 
 Also helpful:  https://scotch.io/tutorials/scraping-the-web-with-node-js
 
-##H2 12/29/2017
+## 12/29/2017
 Converted DevDiary to .md file.  Discovered that the 3 back-tick method of code highlighting seems to be broken for Atom.  I really should get moving over to VS Code.
+
+So I discovered that
