@@ -46,11 +46,11 @@ Also, here's the breakdown of a indeed.com url
 https://www.indeed.com/jobs?q=javascript&l=Atlanta,+GA&rbl=Atlanta,+GA&jlid=966e6327a98f7e81&jt=fulltime&explvl=entry_level
 
 www.indeed.com/jobs
-?q = before query term
-&l = before location
-&rbl = before the more specific location
-&jlid followed by long string (GUID?) = appears when the location is selected.  This may have to be hardcoded for locations
-&jt = before job type (fulltime, internship, contract, temporary, parttime, commission)
+⋅⋅* ?q = before query term
+⋅⋅* &l = before location
+⋅⋅* &rbl = before the more specific location
+⋅⋅* &jlid followed by long string (GUID?) = appears when the location is selected.  This may have to be hardcoded for locations
+⋅⋅* &jt = before job type (fulltime, internship, contract, temporary, parttime, commission)
 &explvl = before experience level (entry_level, mid_level, senior_level)
 
 not shown
