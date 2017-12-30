@@ -91,6 +91,46 @@ Maybe I will change the DevDiary to a .md file so my notes are better displayed.
 Also helpful:  https://scotch.io/tutorials/scraping-the-web-with-node-js
 
 ## 12/29/2017
-Converted DevDiary to .md file.  Discovered that the 3 back-tick method of code highlighting seems to be broken for Atom.  I really should get moving over to VS Code.
+Converted DevDiary to .md file.  Discovered that the 3 back-tick method of code highlighting seems to be broken for Atom for javaScript.  I really should get moving over to VS Code.
 
-So I discovered that
+So I was trying to scrape the link and came back with an incomplete URL.
+"/rc/clk?jk=c78e9a421d68927d&fccid=70ffea20507501b6"
+
+After inspecting, I saw that the full URL is
+https://www.indeed.com/rc/clk?jk=c78e9a421d68927d&fccid=70ffea20507501b6
+
+This redirects to the following site
+https://www.indeed.com/viewjob?jk=c78e9a421d68927d&q=javascript&l=Atlanta,+GA&tk=1c2i2mbm6518lb1u&from=web
+
+I'll solve this problem by scraping the incomplete code as the URL and append it to "https://www.indeed.com".  This complete URL will go into the object.
+
+### 16:52 Problem With Sponsored Posts
+So, the appending works.  I also discovered that the "sponsored" posts don't have the same structure as the regular posts.  Sponsored posts have the following structure:
+```html
+<div class="row result clickcard" id="pj_c9061d865d2b4cae" data-jk="c9061d865d2b4cae" data-advn="576699342925480">
+            <a target="_blank" id="sja1" data-tn-element="jobTitle" class="jobtitle turnstileLink" href="/viewjob?jk=c9061d865d2b4cae&amp;from=tp-serp&amp;tk=1c2i2mbm6518lb1u" title="Web Architect" rel="noopener nofollow" onmousedown="sjomd('sja1'); clk('sja1');" onclick="setRefineByCookie(['jobtype', 'loc', 'explvl']); sjoc('sja1',0); convCtr('SJ')">Web Architect</a>
+
+```
+Regular posts have the following structure
+```html
+<div class="row result clickcard" id="p_c78e9a421d68927d" data-jk="c78e9a421d68927d" data-tn-component="organicJob">
+<h2 id="jl_c78e9a421d68927d" class="jobtitle">
+    <a href="/rc/clk?jk=c78e9a421d68927d&amp;fccid=70ffea20507501b6" target="_blank" rel="noopener nofollow" onmousedown="return rclk(this,jobmap[1],0);" onclick="setRefineByCookie(['jobtype', 'loc', 'explvl']); return rclk(this,jobmap[1],true,0);" title="Web Development Teaching Assistant" class="turnstileLink" data-tn-element="jobTitle">Web Development Teaching Assistant</a>
+    </h2>
+```
+
+The class "jobTitle" appears at different levels in each.  In the sponsored posts, it shows up in the same tag as the link.  In the regular posts, it is a level above the link.  The current scrape structure returns 'undefined' for the sponsored posts.
+
+#### Possible Solutions
+1. We could make a condition that checks to see if the desired link is "undefined" and if so, proceed along a different set of instructions for the scrape for sponsored posts.
+2. We have the scrape check for different criteria such as the element "[data-tn-component='organicJob']".
+3. Could I do another scrape at the same time?  Run one scrape for all regular posts using more specific references unique to regular posts and another for sponsored?
+
+This could be of some use.
+https://www.w3schools.com/jquery/jquery_ref_selectors.asp
+
+
+#### Trying out Solutions
+1. Not tested yet.
+2. Tested, it works.  Not sure what we'll do about the sponsored jobs at this time.
+3. Not tested yet.
