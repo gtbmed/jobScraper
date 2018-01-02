@@ -20,7 +20,7 @@ router.get("/scrape", function(req, res) {
     var $ = cheerio.load(html);
 
     var result = {};
-    // Look for the specified clas
+    // Look for the specified class for regular job posts
     $('[data-tn-component="organicJob"]').each(function(i, element) {
       //Grab the Job Title
       result.title = $(element).children().children().attr('title');
@@ -33,6 +33,20 @@ router.get("/scrape", function(req, res) {
     // Go back to the home page
     //res.redirect('/');
     });
+    // TEST to see if I can scrpe the sponsored job posts as well.
+    $('[data-advn]').each(function(i, element) {
+      //Grab the Job Title
+      result.title = $(element).children().attr('title');
+      // grab the link
+      //result.link = 'https://www.indeed.com' + $(element).children().attr("href");
+      // If I get these working, we'll see about company and description
+      //Test to see if it scrapes
+      console.log (result); //
+
+    // Go back to the home page
+    //res.redirect('/');
+    });
+
   })
 });
 // Export Router to server.js
