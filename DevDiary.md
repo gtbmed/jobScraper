@@ -134,3 +134,30 @@ https://www.w3schools.com/jquery/jquery_ref_selectors.asp
 1. Not tested yet.
 2. Tested, it works.  Not sure what we'll do about the sponsored jobs at this time.
 3. Not tested yet.
+
+## 1/2/2017
+Going to try out adding another scrape immediately after the scrape for regular posts and see if that gets the sponsored posts.
+
+It's alive!!!! Ok, so all I needed to do was add another command below the first one.
+
+    $('[data-advn]').each(function(i, element) {
+      //Grab the Job Title
+      result.title = $(element).children().attr('title');
+      // grab the link
+      console.log (result); //
+Now to get the links.
+
+I only added the link grab for the regular posts at first and figured that when the scrape happened, the sponsored posts would only have titles.  The scrape didn't like that so it copied the link to the last regular job post to each of the sponsored posts.
+
+I'm going over my scrape again to make sure it grabbed everything.  Something looks weird.
+
+### 19:17
+Just confirmed that I'm scraping posts that don't match what I see on the site when I load the url into my browser.  Wat?
+
+Interestingly enough, Indeed uses a default URL prefix
+```html
+['basicPermaLink'] = "https://www.indeed.com";
+```
+
+### 20:18
+Just spoke with Andy and the problem may stem from me not having any user-agent headers.  Time to research those and how I use them with Cheerio my scrape.  Bleh.  
