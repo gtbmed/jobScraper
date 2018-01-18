@@ -135,7 +135,7 @@ https://www.w3schools.com/jquery/jquery_ref_selectors.asp
 2. Tested, it works.  Not sure what we'll do about the sponsored jobs at this time.
 3. Not tested yet.
 
-## 1/2/2017
+## 1/2/2018
 Going to try out adding another scrape immediately after the scrape for regular posts and see if that gets the sponsored posts.
 
 It's alive!!!! Ok, so all I needed to do was add another command below the first one.
@@ -161,3 +161,21 @@ Interestingly enough, Indeed uses a default URL prefix
 
 ### 20:18
 Just spoke with Andy and the problem may stem from me not having any user-agent headers.  Time to research those and how I use them with Cheerio my scrape.  Bleh.  
+
+## 1/18/2018
+
+Ok, I'm back.  Work has kept me busy and the commute is killing me.  Must find dev job.  Anyway, on to today's work.
+
+I went ahead and dug into the 'request' library on how to add a user agent and added the one for my browser to the request.
+
+    request({
+      url:"https://www.indeed.com/jobs?q=javascript&l=Atlanta,+GA&rbl=Atlanta,+GA&jlid=966e6327a98f7e81&jt=fulltime&explvl=entry_level",
+      headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'}},
+
+      function(error, response, html) {
+
+  We'll see if this works now.
+
+  It still doesn't match what the url returns in my browser....
+
+  Time to dig more into this.  Maybe just work on getting the back end to stick stuff into MySQL to show that I can do that?
