@@ -15,7 +15,11 @@ const urlPrefix = 'https://www.indeed.com'
 // Scrape Route
 router.get("/scrape", function(req, res) {
   // Make a request call to grab the HTML body from the site of your choice
-  request("https://www.indeed.com/jobs?q=javascript&l=Atlanta,+GA&rbl=Atlanta,+GA&jlid=966e6327a98f7e81&jt=fulltime&explvl=entry_level", function(error, response, html) {
+  request({
+    url:"https://www.indeed.com/jobs?q=javascript&l=Atlanta,+GA&rbl=Atlanta,+GA&jlid=966e6327a98f7e81&jt=fulltime&explvl=entry_level",
+    headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'}},
+
+    function(error, response, html) {
 
     var $ = cheerio.load(html);
 
