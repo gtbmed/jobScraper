@@ -174,8 +174,17 @@ I went ahead and dug into the 'request' library on how to add a user agent and a
 
       function(error, response, html) {
 
-  We'll see if this works now.
+We'll see if this works now.
 
-  It still doesn't match what the url returns in my browser....
+It still doesn't match what the url returns in my browser....
 
-  Time to dig more into this.  Maybe just work on getting the back end to stick stuff into MySQL to show that I can do that?
+Time to dig more into this.  Maybe just work on getting the back end to stick stuff into MySQL to show that I can do that?
+
+### 14:29
+Going to grab the "Company" too to make checking easier.
+
+Also maybe use this to generate a random user agent each time I scrape.  This may help.
+https://www.npmjs.com/package/random-useragent
+
+### 14:46
+Ok, maybe it is getting the correct results, it just isn't pulling the same way that indeed is putting them up.  Now that I have the companies, I can see that they are part of the search, I just find them on later pages.  How do I solve this issue, or get all of them at once?
